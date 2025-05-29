@@ -20,7 +20,7 @@ Required toll
 
 Step to ci/cd
 
-1. git clone https://github.com/<your-username>/<repo-name>.git
+1. git clone github url
 2. cd terraform/
 terraform init
 terraform apply
