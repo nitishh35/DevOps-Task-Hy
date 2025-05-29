@@ -1,1 +1,23 @@
-demo
+apiVersion: v1
+kind: Secret
+metadata:
+  name: alertmanager-config
+  namespace: monitoring
+  labels:
+    app: alertmanager
+stringData:
+  alertmanager.yaml: |
+    global:
+      smtp_smarthost: 'smtp.gmail.com:587'
+      smtp_from: 'your-alerts@example.com'
+      smtp_auth_username: 'your-alerts@example.com'
+      smtp_auth_password: 'your-app-password'  # use App Passwords for Gmail
+
+    route:
+      receiver: email-notifications
+
+    receivers:
+      - name: email-notifications
+        email_configs:
+          - to: 'your-recipient@example.com'
+            send_resolved: true
