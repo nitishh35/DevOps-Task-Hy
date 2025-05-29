@@ -26,7 +26,7 @@ terraform init
 terraform apply
 
 3. docker build -t flask-app . & docker push <ecr-url>:latest
-4. kubectl apply -k k8s/
+4. kubectl apply -f k8s/
 5.  Access the app using the host name provided in ingress file
 6.  Monitoring and Alerting
    Prometheus scrapes /metrics using prometheus_flask_exporter
