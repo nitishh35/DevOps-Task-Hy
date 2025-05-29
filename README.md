@@ -8,7 +8,7 @@
 Kubernetes:
   - Deployments/service with resource limits, readiness/liveness probes
   - Ingress for external access
-  - NetworkPolicy + RBAC + security  for security
+  - NetworkPolicy + RBAC + secret for security
   - Monit
 
 Required toll
