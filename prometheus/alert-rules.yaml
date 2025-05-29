@@ -1,1 +1,17 @@
-demo
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: flask-app-rules
+  namespace: monitoring
+spec:
+  groups:
+    - name: flask.rules
+      rules:
+        - alert: HighMemoryUsage
+          expr: container_memory_usage_bytes > 500000000
+          for: 2m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High memory usage"
+            description: "Container using >500MB for 2 minutes"
