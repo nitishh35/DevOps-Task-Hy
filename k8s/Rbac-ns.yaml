@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: flask-sa
-  namespace: your-namespace
+  namespace: app
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
