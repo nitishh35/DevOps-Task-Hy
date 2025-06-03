@@ -9,7 +9,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: flask-role
-  namespace: your-namespace
+  namespace: app
 rules:
   - apiGroups: [""]
     resources: ["pods", "services", "endpoints"]
@@ -20,11 +20,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: flask-rolebinding
-  namespace: your-namespace
+  namespace: app
 subjects:
   - kind: ServiceAccount
     name: flask-sa
-    namespace: your-namespace
+    namespace: app
 roleRef:
   kind: Role
   name: flask-role
