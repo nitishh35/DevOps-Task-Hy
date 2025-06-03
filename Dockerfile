@@ -11,7 +11,10 @@ COPY --from=builder /root/.local /root/.local
 COPY app.py .
 
 ENV PYTHONPATH=/root/.local
-USER nonroot
+ENV PATH=/root/.local/bin:$PATH
+
+USER 1000:1000
+
 EXPOSE 5000
 CMD ["app.py"]
 
