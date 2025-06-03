@@ -11,7 +11,6 @@ COPY --from=builder /root/.local /root/.local
 COPY app.py .
 
 ENV PYTHONPATH=/root/.local
-RUN adduser nonroot && chown nonroot:nonroot -R
 USER nonroot
 EXPOSE 5000
 CMD ["app.py"]
